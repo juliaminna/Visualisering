@@ -25,7 +25,6 @@ export function initDreamVacationForm() {
     rangeOutputTime.textContent = this.value;
   });
 
-  document.getElementById("searchBtn").addEventListener("click", async () => {
     const age = document.getElementById("ageOfUser").value;
     const screenTime = document.getElementById("screenTime").value;
 
@@ -36,11 +35,5 @@ export function initDreamVacationForm() {
     const totalScreenTime = monthsLeft * percentageOfMonths;
 
     const percentageOfLife = totalScreenTime / monthsLeft;
-
-    console.log("Du har " + Math.round(monthsLeft)  + " månader kvar")
-    console.log("Varav du kommer att spendera " + Math.round(totalScreenTime) + " framför en skärm");
-    console.log("Vilket är " + Math.round(percentageOfLife * 100) + "% av ditt kvarvarande liv.");
-  });
-
 
 }
