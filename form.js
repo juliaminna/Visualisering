@@ -6,6 +6,25 @@ export function initDreamVacationForm() {
     document.getElementById("searchBtn").click(); 
   });
 
+
+  const rangeInputAge = document.getElementById('ageOfUser');
+  const rangeOutputAge = document.getElementById('rangeValueAge');
+
+  rangeOutputAge.textContent = rangeInputAge.value;
+
+  rangeInputAge.addEventListener('input', function() {
+    rangeOutputAge.textContent = this.value;
+  });
+
+    const rangeInputTime = document.getElementById('screenTime');
+  const rangeOutputTime = document.getElementById('rangeValueTime');
+
+  rangeOutputTime.textContent = rangeInputTime.value;
+
+  rangeInputTime.addEventListener('input', function() {
+    rangeOutputTime.textContent = this.value;
+  });
+
   document.getElementById("searchBtn").addEventListener("click", async () => {
     const age = document.getElementById("ageOfUser").value;
     const screenTime = document.getElementById("screenTime").value;
@@ -18,7 +37,7 @@ export function initDreamVacationForm() {
 
     const percentageOfLife = totalScreenTime / monthsLeft;
 
-    console.log("Du här " + Math.round(monthsLeft)  + " månader kvar")
+    console.log("Du har " + Math.round(monthsLeft)  + " månader kvar")
     console.log("Varav du kommer att spendera " + Math.round(totalScreenTime) + " framför en skärm");
     console.log("Vilket är " + Math.round(percentageOfLife * 100) + "% av ditt kvarvarande liv.");
   });
