@@ -1,39 +1,56 @@
 import { MONTHLY_TASKS } from "./constants.js";
 
 export function initDreamVacationForm() {
-  document.querySelector("form").addEventListener("submit", (event) => {
-    event.preventDefault(); 
-    document.getElementById("searchBtn").click(); 
-  });
+    // Förhindra form från att ladda om sidan
+    document.querySelector("form").addEventListener("submit", (event) => {
+        event.preventDefault();
+    });
 
-
-  const rangeInputAge = document.getElementById('ageOfUser');
-  const rangeOutputAge = document.getElementById('rangeValueAge');
-
-  rangeOutputAge.textContent = rangeInputAge.value;
-
-  rangeInputAge.addEventListener('input', function() {
-    rangeOutputAge.textContent = this.value;
-  });
+    const rangeInputAge = document.getElementById('ageOfUser');
+    const rangeOutputAge = document.getElementById('rangeValueAge');
 
     const rangeInputTime = document.getElementById('screenTime');
-  const rangeOutputTime = document.getElementById('rangeValueTime');
+    const rangeOutputTime = document.getElementById('rangeValueTime');
 
-  rangeOutputTime.textContent = rangeInputTime.value;
+    // Visa värdena bredvid sliders
+    rangeOutputAge.textContent = rangeInputAge.value;
+    rangeOutputTime.textContent = rangeInputTime.value;
 
-  rangeInputTime.addEventListener('input', function() {
-    rangeOutputTime.textContent = this.value;
-  });
+    rangeInputAge.addEventListener('input', function () {
+        rangeOutputAge.textContent = this.value;
+    });
+    rangeInputTime.addEventListener('input', function () {
+        rangeOutputTime.textContent = this.value;
+    });
 
-    const age = document.getElementById("ageOfUser").value;
-    const screenTime = document.getElementById("screenTime").value;
+    // ----------- RITA PRICKAR -----------
+    function drawDots(monthsLeft) {
+        const grid = document.getElementById("dotGrid");
+        grid.innerHTML = "";
 
-    const yearsLeft = 83.82 - age;
-    const monthsLeft = yearsLeft * 12;
-    const monthlyScreenTime = screenTime * 30.4375;
-    const percentageOfMonths = monthlyScreenTime / 730.5;
-    const totalScreenTime = monthsLeft * percentageOfMonths;
+        for (let i = 0; i < monthsLeft; i++) {
+            const dot = document.createElement("div");
+            dot.classList.add("dot");
+            dot.id = `dot-${i}`;
+            grid.appendChild(dot);
+        }
+    }
 
-    const percentageOfLife = totalScreenTime / monthsLeft;
+    // ----------- RÄKNA UT & UPPDATERA -----------
+    function update() {
+        const age = Number(document.getElementById("ageOfUser").value);
+        const screenTime = Number(document.getElementById("screenTime").value);
 
+        const yearsLeft = 83.82 - age;
+        const monthsLeft = Math.round(yearsLeft * 12);
+
+        drawDots(monthsLeft);
+    }
+
+    // Kör när användaren ändrar sliders
+    rangeInputAge.addEventListener("input", update);
+    rangeInputTime.addEventListener("input", update);
+
+    // Kör direkt vid sidstart
+    update();
 }
