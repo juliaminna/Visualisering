@@ -3,10 +3,8 @@ import {
 } from "./form.js";
 
 import {
-  flipCard,
-  updateDots
+  flipCard
 } from "./flipcard.js";
 
   initDreamVacationForm();
-  updateDots();
   flipCard();

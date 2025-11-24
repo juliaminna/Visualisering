@@ -4,3 +4,10 @@ export const MONTHLY_TASKS = {
   SOVA: 13422.9375,
   JOBB_ELLER_STUDIER: 9587.82
 };
+
+export const CATEGORY_COLORS = {
+    MATLAGNING: "#f39c12",      // orange
+    HUSHALLSSYSSLOR: "#27ae60", // grön
+    SOVA: "#2980b9",            // blå
+    JOBB_ELLER_STUDIER: "#8e44ad" // lila
+};

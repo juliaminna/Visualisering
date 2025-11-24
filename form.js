@@ -1,5 +1,5 @@
 import { MONTHLY_TASKS } from "./constants.js";
-import  updateDots from "./flipcard.js";
+import  { updateDots } from "./flipcard.js";
 
 // ------------------------------
 // Debounce helper
@@ -67,19 +67,25 @@ export function initDreamVacationForm() {
 // CALCULATE EVERYTHING
 // ------------------------------
 export function recalculate() {
-
     const age = Number(document.getElementById("ageOfUser").value);
     const screenTime = Number(document.getElementById("screenTime").value);
 
     const yearsLeft = 83.82 - age;
-    const monthsLeft = yearsLeft * 12;
+    const monthsLeft = Math.round(yearsLeft * 12);
 
     const monthlyScreenTime = screenTime * 30.4375; // minuter per månad
-    const percentageOfMonths = monthlyScreenTime / 730.5; 
-    const totalScreenTime = monthsLeft * percentageOfMonths;
+    const percentageOfMonth = monthlyScreenTime / 730.5; 
+    const totalScreenTime = monthsLeft * percentageOfMonth;
 
-    const percentageOfLife = totalScreenTime / monthsLeft;
+    const tasksInMonths = {};
 
-    // Uppdatera prickarna
-    updateDots(monthsLeft);
+    for (const key in MONTHLY_TASKS) {
+        const minutesPerMonth = MONTHLY_TASKS[key];
+        const fractionOfMonth = minutesPerMonth / 43200;
+        const monthsSpent = fractionOfMonth * monthsLeft;
+        tasksInMonths[key] = Math.round(monthsSpent);
+    }
+
+    // Skicka med totalScreenTime avrundat till heltal prickar
+    updateDots(monthsLeft, tasksInMonths, Math.round(totalScreenTime));
 }
