@@ -4,7 +4,9 @@ import {
 
 import {
   flipCard,
+  updateDots
 } from "./flipcard.js";
 
   initDreamVacationForm();
+  updateDots();
   flipCard();

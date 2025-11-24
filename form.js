@@ -1,56 +1,85 @@
 import { MONTHLY_TASKS } from "./constants.js";
+import  updateDots from "./flipcard.js";
 
+// ------------------------------
+// Debounce helper
+// ------------------------------
+function debounce(func, delay) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), delay);
+    };
+}
+
+
+
+// ------------------------------
+// MAIN INIT FUNCTION
+// ------------------------------
 export function initDreamVacationForm() {
-    // Förhindra form från att ladda om sidan
+
+    // Hantera form-submission → trigga knapp
     document.querySelector("form").addEventListener("submit", (event) => {
         event.preventDefault();
+        document.getElementById("searchBtn").click();
     });
 
-    const rangeInputAge = document.getElementById('ageOfUser');
-    const rangeOutputAge = document.getElementById('rangeValueAge');
+    // Age range
+    const ageInput = document.getElementById('ageOfUser');
+    const ageValue = document.getElementById('rangeValueAge');
 
-    const rangeInputTime = document.getElementById('screenTime');
-    const rangeOutputTime = document.getElementById('rangeValueTime');
+    ageValue.textContent = ageInput.value;
 
-    // Visa värdena bredvid sliders
-    rangeOutputAge.textContent = rangeInputAge.value;
-    rangeOutputTime.textContent = rangeInputTime.value;
-
-    rangeInputAge.addEventListener('input', function () {
-        rangeOutputAge.textContent = this.value;
-    });
-    rangeInputTime.addEventListener('input', function () {
-        rangeOutputTime.textContent = this.value;
+    // Uppdatera texten direkt
+    ageInput.addEventListener('input', () => {
+        ageValue.textContent = ageInput.value;
     });
 
-    // ----------- RITA PRICKAR -----------
-    function drawDots(monthsLeft) {
-        const grid = document.getElementById("dotGrid");
-        grid.innerHTML = "";
+    // Uppdatera prickar när man SLUTAT dra
+    ageInput.addEventListener('input', debounce(() => {
+        recalculate();
+    }, 250));
 
-        for (let i = 0; i < monthsLeft; i++) {
-            const dot = document.createElement("div");
-            dot.classList.add("dot");
-            dot.id = `dot-${i}`;
-            grid.appendChild(dot);
-        }
-    }
 
-    // ----------- RÄKNA UT & UPPDATERA -----------
-    function update() {
-        const age = Number(document.getElementById("ageOfUser").value);
-        const screenTime = Number(document.getElementById("screenTime").value);
+    // Screen time range
+    const timeInput = document.getElementById('screenTime');
+    const timeValue = document.getElementById('rangeValueTime');
 
-        const yearsLeft = 83.82 - age;
-        const monthsLeft = Math.round(yearsLeft * 12);
+    timeValue.textContent = timeInput.value;
 
-        drawDots(monthsLeft);
-    }
+    timeInput.addEventListener('input', () => {
+        timeValue.textContent = timeInput.value;
+    });
 
-    // Kör när användaren ändrar sliders
-    rangeInputAge.addEventListener("input", update);
-    rangeInputTime.addEventListener("input", update);
+    timeInput.addEventListener('input', debounce(() => {
+        recalculate();
+    }, 250));
 
-    // Kör direkt vid sidstart
-    update();
+
+    // Första körningen
+    recalculate();
+}
+
+
+
+// ------------------------------
+// CALCULATE EVERYTHING
+// ------------------------------
+export function recalculate() {
+
+    const age = Number(document.getElementById("ageOfUser").value);
+    const screenTime = Number(document.getElementById("screenTime").value);
+
+    const yearsLeft = 83.82 - age;
+    const monthsLeft = yearsLeft * 12;
+
+    const monthlyScreenTime = screenTime * 30.4375; // minuter per månad
+    const percentageOfMonths = monthlyScreenTime / 730.5; 
+    const totalScreenTime = monthsLeft * percentageOfMonths;
+
+    const percentageOfLife = totalScreenTime / monthsLeft;
+
+    // Uppdatera prickarna
+    updateDots(monthsLeft);
 }
