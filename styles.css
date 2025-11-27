@@ -1,8 +1,38 @@
+.form-card-body {
+  rotate: 2deg;
+}
+
+.dotgrid-card-body {
+  rotate: -2deg;
+}
+
 .flip-card {
   background-color: transparent;
   width: 100%;
   height: 400px;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+.indicator-dot-one {
+  height: 15px;
+  width: 15px;
+  background-color: black;
+  border-radius: 100%;
+}
+.indicator-dot-two {
+  height: 15px;
+  width: 15px;
+  border: 2px solid black;
+  border-radius: 100%;
+}
+
+.flip-card.flipped .indicator-dot-one {
+  background-color: white;
+  border: 2px solid black;
+}
+
+.flip-card.flipped .indicator-dot-two {
+  background-color: black;
 }
 
 /* This container is needed to position the front and back side */

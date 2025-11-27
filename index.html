@@ -14,26 +14,53 @@
       <div class="container pb-4">
         <div class="row">
           <div class="col-12 col-lg-6 py-2 py-lg-3">
-            <div class="card rounded-4 shadow-sm">
+            <div class="card form-card-body rounded-4 shadow-sm">
               <div class="card-body">
-                <h2 class="h2">Skärmtid i livet</h2>
                 <form action="#">
                   <div class="col d-flex">
                     <div class="col-12">
 
-                    <label for="range4" class="form-label h6">Din ålder:</label>
-                        <output for="range4" id="rangeValueAge" aria-hidden="true"></output>
+                      <div id="stepOne">
+                        <p class="d-flex justify-content-center">1/2</p>
+                        <label for="range4" id="labelAge" class="form-label h2">Din ålder:</label>
+                        <output for="range4" class="h2" id="rangeValueAge" aria-hidden="true"></output>
                         <input id="ageOfUser" type="range" class="form-range" min="18" max="83" value="18">
+                        <button id="btnBackStepOne" class="btn btn-secondary" disabled>Tillbaka</button>
+                        <button id="btnContinueStepOne" class="btn btn-primary">Fortsätt</button>
+                      </div>
 
-                    <label for="range4" class="form-label h6">Din skärmtid per dag:</label>
+                      <div id="stepTwo" class="d-none">
+                        <p class="d-flex justify-content-center">1/2</p>
+                        <p>hawaofhawf pdfjfpoqwjwf pqjfåowfjwq  fåj. </p>
+                        <button id="btnBackStepTwo" class="btn btn-secondary">Tillbaka</button>
+                        <button id="btnContinueStepTwo" class="btn btn-primary">Fortsätt</button>
+                      </div>
+
+                      <div id="stepThree" class="d-none">
+                        <p class="d-flex justify-content-center">2/2</p>
+                        <label for="range4" id="labelScreen" class="form-label h6">Din skärmtid per dag:</label>
                         <output for="range5" id="rangeValueTime" aria-hidden="true"></output>
                         <input id="screenTime" type="range" class="form-range" min="0" max="24" step="0.5" value="0">
+                        <button id="btnBackStepThree" class="btn btn-secondary">Tillbaka</button>
+                        <button id="btnContinueStepThree" class="btn btn-primary">Fortsätt</button>
+                      </div>
+
+                      <div id="stepFour" class="d-none">
+                        <p class="d-flex justify-content-center">2/2</p>
+                        <p>hawaofhawf pdfjfpoqwjwf pqjfåowfjwq  fåj. </p>
+                        <button id="btnBackStepFour" class="btn btn-secondary">Tillbaka</button>
+                        <button id="btnContinueStepFour" class="btn btn-primary">Fortsätt</button>
+                      </div>
                 </form>
               </div>
             </div>
           </div>
         </div>
-          <div class="flip-card rounded-4 shadow-sm" id="myCard">
+          <div class="flip-card dotgrid-card-body rounded-4 shadow-sm" id="myCard">
+            <div class="d-flex justify-content-center">
+              <div class="indicator-dot-one"></div>
+              <div class="indicator-dot-two"></div>
+            </div>
               <div class="flip-card-inner">
                 <div class="flip-card-front">
                   <div id="dotGrid"></div>
@@ -44,7 +71,7 @@
                 </div>
               </div>
             </div>
-            <button class="flip-btn btn btn-secondary" id="flipBtn">Läs mer</button>
+            <button class="flip-btn btn btn-secondary" id="flipBtn">Om ditt resultat</button>
           </div>
       </div>
     </main>

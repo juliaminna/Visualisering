@@ -28,6 +28,14 @@ export function initDreamVacationForm() {
     // Age range
     const ageInput = document.getElementById('ageOfUser');
     const ageValue = document.getElementById('rangeValueAge');
+    const continueOne = document.getElementById('btnContinueStepOne');
+    const continueTwo = document.getElementById('btnContinueStepTwo');
+    const continueThree = document.getElementById('btnContinueStepThree');
+    const continueFour = document.getElementById('btnContinueStepFour');
+    const backOne = document.getElementById('btnBackStepOne');
+    const backTwo = document.getElementById('btnBackStepTwo');
+    const backThree = document.getElementById('btnBackStepThree');
+    const backFour = document.getElementById('btnBackStepFour');
 
     ageValue.textContent = ageInput.value;
 
@@ -40,6 +48,48 @@ export function initDreamVacationForm() {
     ageInput.addEventListener('input', debounce(() => {
         recalculate();
     }, 250));
+
+    continueOne.addEventListener('click', () => {
+        document.getElementById("stepOne").classList.add('d-none');
+        document.getElementById("stepTwo").classList.remove('d-none');
+
+    });
+
+    continueTwo.addEventListener('click', () => {
+        document.getElementById("stepTwo").classList.add('d-none');
+        document.getElementById("stepThree").classList.remove('d-none');
+
+    });
+
+    backTwo.addEventListener('click', () => {
+        document.getElementById("stepTwo").classList.add('d-none');
+        document.getElementById("stepOne").classList.remove('d-none');
+
+    });
+
+    continueThree.addEventListener('click', () => {
+        document.getElementById("stepThree").classList.add('d-none');
+        document.getElementById("stepFour").classList.remove('d-none');
+
+    });
+
+        backThree.addEventListener('click', () => {
+        document.getElementById("stepThree").classList.add('d-none');
+        document.getElementById("stepTwo").classList.remove('d-none');
+
+    });
+
+        continueFour.addEventListener('click', () => {
+        document.getElementById("stepFour").classList.add('d-none');
+        document.getElementById("stepFive").classList.remove('d-none');
+
+    });
+
+        backFour.addEventListener('click', () => {
+        document.getElementById("stepFour").classList.add('d-none');
+        document.getElementById("stepThree").classList.remove('d-none');
+
+    });
 
 
     // Screen time range
