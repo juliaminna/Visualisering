@@ -11,9 +11,18 @@
     <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="https://use.typekit.net/awv5jeu.css">
   </head>
-<body class="bg-dark">
-    <header class="bg-grad" style="height: 500px;">
-        <nav class="sticky">
+<body class="bg-grad">
+
+    <header class="" style="height: 500px;">
+          <!-- Bubble layer -->
+  <div class="bubbles">
+    <div class="bubble" style="--size: 100px; --x: 8%; --y: 7%; --color: #ee55ff"></div>
+    <div class="bubble" style="--size: 140px; --x: 12%; --y: 12%; --color: #ffc355;"></div>
+    <div class="bubble" style="--size: 80px; --x: 85%; --y: 5%; --color: #55ffb5;"></div>
+    <div class="bubble" style="--size: 220px; --x: 92%; --y: 8%; --color: #55c1ff;"></div>
+    <!-- lägg till fler bubblor -->
+  </div>
+        <nav class="sticky-top">
             <div class="container">
                 <div class=" col">
                     <div class="d-flex justify-content-between align-items-center mt-3">
@@ -38,8 +47,19 @@
             </section>
         </div>
 </header>
-<main>
-    <div class="bg-white" style="height: 6px;"></div>
+<main style="height: 2000px;">
+    <div class="container">
+        <div class="col">
+            <div class="container col-6 offset-5" style="rotate: 5deg; margin-top: 160px;">
+                    <div class="bg-white d-flex justify-content-center row shadow-lg" style="height: 400px; width: 400px; border-radius: 100%;">
+                        <h4 class="text-uppercase align-self-end text-center dark">Visste du att...</h4>
+                        <p class="text-center dark" style="width: 80%;">Dagens 18-åring är påväg att spendera 97% av sin kvarvarande fritid framför en skärm? Detta innebär att 667 månader under en livstid spenderas på mobilen.</p>
+                    </div>
+            </div>
+        </div>
+    </div>
 </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="script.js" type="module"></script>
 </body>
 </html>
