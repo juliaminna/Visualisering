@@ -2,6 +2,16 @@
     color: azure;
 }
 
+.bg-white {
+    color: azure;
+}
+
 .bg-dark {
     background-color: rgb(29, 29, 31);
+}
+
+.bg-grad {
+  background-image: radial-gradient(rgb(60, 60, 63), rgb(29, 29, 31));
+  background-repeat: no-repeat;
+  background-size: cover;
 }
