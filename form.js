@@ -36,6 +36,8 @@ export function initDreamVacationForm() {
     const backTwo = document.getElementById('btnBackStepTwo');
     const backThree = document.getElementById('btnBackStepThree');
     const backFour = document.getElementById('btnBackStepFour');
+    const saveFinal = document.getElementById('btnSaveFinal');
+    const continueFinal = document.getElementById('btnContinueFinal');
 
     ageValue.textContent = ageInput.value;
 
@@ -118,7 +120,7 @@ export function initDreamVacationForm() {
 
         continueFour.addEventListener('click', () => {
         document.getElementById("stepFour").classList.add('d-none');
-        document.getElementById("stepFive").classList.remove('d-none');
+        document.getElementById("stepFinal").classList.remove('d-none');
 
     });
 
@@ -126,6 +128,15 @@ export function initDreamVacationForm() {
         document.getElementById("stepFour").classList.add('d-none');
         document.getElementById("stepThree").classList.remove('d-none');
 
+    });
+
+        continueFinal.addEventListener('click', () => {
+        document.getElementById("stepFinal").classList.add('d-none');
+        document.getElementById("stepStart").classList.remove('d-none');
+    });
+
+        saveFinal.addEventListener('click', () => {
+        // LADDA NER VISUALISERINGEN OCH DATAN.
     });
 
 
