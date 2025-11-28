@@ -22,12 +22,12 @@ export function initDreamVacationForm() {
     // Hantera form-submission → trigga knapp
     document.querySelector("form").addEventListener("submit", (event) => {
         event.preventDefault();
-        document.getElementById("searchBtn").click();
     });
 
     // Age range
     const ageInput = document.getElementById('ageOfUser');
     const ageValue = document.getElementById('rangeValueAge');
+    const continueStart = document.getElementById('btnContinueStepStart')
     const continueOne = document.getElementById('btnContinueStepOne');
     const continueTwo = document.getElementById('btnContinueStepTwo');
     const continueThree = document.getElementById('btnContinueStepThree');
@@ -39,6 +39,32 @@ export function initDreamVacationForm() {
 
     ageValue.textContent = ageInput.value;
 
+    continueTwo.addEventListener('click', () => {
+        document.getElementById("stepTwo").classList.add('d-none');
+        document.getElementById("stepThree").classList.remove('d-none');
+
+        // 🔻 Dämpa sysslorna när skärmtiden just ska visas
+        document.getElementById("dotGrid").classList.add("screen-mode");
+    });
+
+    backThree.addEventListener('click', () => {
+        document.getElementById("stepThree").classList.add('d-none');
+        document.getElementById("stepTwo").classList.remove('d-none');
+
+        // 🔺 Återställ prickarnas opacitet
+        document.getElementById("dotGrid").classList.remove("screen-mode");
+    });
+
+    continueThree.addEventListener('click', () => {
+        document.getElementById("stepThree").classList.add('d-none');
+        document.getElementById("stepFour").classList.remove('d-none');
+
+        // (ev. låt screen-mode ligga kvar)
+    });
+
+
+
+
     // Uppdatera texten direkt
     ageInput.addEventListener('input', () => {
         ageValue.textContent = ageInput.value;
@@ -49,9 +75,20 @@ export function initDreamVacationForm() {
         recalculate();
     }, 250));
 
+    continueStart.addEventListener('click', () => {
+        document.getElementById("stepStart").classList.add('d-none');
+        document.getElementById("stepOne").classList.remove('d-none');
+    });
+
     continueOne.addEventListener('click', () => {
         document.getElementById("stepOne").classList.add('d-none');
         document.getElementById("stepTwo").classList.remove('d-none');
+
+    });
+
+    backOne.addEventListener('click', () => {
+        document.getElementById("stepOne").classList.add('d-none');
+        document.getElementById("stepStart").classList.remove('d-none');
 
     });
 

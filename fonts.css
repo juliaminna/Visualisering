@@ -2,24 +2,28 @@
 font-family: "montserrat", sans-serif;
 font-weight: 400;
 font-style: normal;
+text-transform: uppercase;
 }
 
 .font-heading-italic {
 font-family: "montserrat", sans-serif;
 font-weight: 400;
 font-style: italic;
+text-transform: uppercase;
 }
 
 .font-heading-bold {
 font-family: "montserrat", sans-serif;
 font-weight: 700;
 font-style: normal;
+text-transform: uppercase;
 }
 
 .font-heading-italic-bold {
 font-family: "montserrat", sans-serif;
 font-weight: 700;
 font-style: italic;
+text-transform: uppercase;
 }
 
 .font-paragraph {

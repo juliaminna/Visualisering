@@ -1,23 +1,5 @@
 import { CATEGORY_COLORS } from "./constants.js";
 
-
-export function flipCard() {
-    const card = document.getElementById("myCard");
-    const btn = document.getElementById("flipBtn");
-
-    btn.addEventListener("click", () => {
-    card.classList.toggle("flipped");
-
-    if (card.classList.contains("flipped")) {
-        // baksidan syns
-        btn.innerHTML = "Tillbaka";
-    } else {
-        // framsidan syns
-        btn.innerHTML = "Visa mer";
-    }
-    });
-}
-
 // ------------------------------
 // Generate dots
 // ------------------------------
@@ -38,7 +20,7 @@ export function updateDots(monthsLeft, tasksInMonths, totalScreenTime) {
 
         for (let i = 0; i < numDots; i++) {
             const dot = document.createElement("div");
-            dot.classList.add("dot");
+            dot.classList.add("dot", "task-dot");
             dot.style.backgroundColor = color;
             dot.style.animationDelay = `${(totalDots + i) * 0.01}s`; // staggered animation
             container.appendChild(dot);
@@ -51,8 +33,8 @@ export function updateDots(monthsLeft, tasksInMonths, totalScreenTime) {
 
     for (let i = 0; i < screenDotsToDraw; i++) {
         const dot = document.createElement("div");
-        dot.classList.add("dot");
-        dot.style.backgroundColor = "#000"; // svart för skärmtid
+        dot.classList.add("dot", "screen-dot");
+        dot.style.backgroundColor = "#ff5555"; // svart för skärmtid
         dot.style.animationDelay = `${(totalDots + i) * 0.01}s`;
         container.appendChild(dot);
     }
@@ -64,7 +46,7 @@ export function updateDots(monthsLeft, tasksInMonths, totalScreenTime) {
 
     for (let i = 0; i < remainingDots; i++) {
         const dot = document.createElement("div");
-        dot.classList.add("dot");
+        dot.classList.add("dot", "remaining-dot");
         dot.style.backgroundColor = "#ccc"; // grå för övriga månader
         dot.style.animationDelay = `${(totalDots + i) * 0.01}s`;
         container.appendChild(dot);

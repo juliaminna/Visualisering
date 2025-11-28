@@ -43,14 +43,16 @@
                 <h5 class="white font-paragraph">
                     Här är en text som förklarar <br> sidan och berättar vad man kan göra här :)
                 </h5>
-                <p><i class="arrow down"></i></p>
+                <a href="#info-one">
+                  <p><i class="arrow down"></i></p>
+                </a>
             </section>
         </div>
 </header>
 <main style="height: 2000px;">
     <div class="container">
         <div class="col">
-            <div class="container col-6 offset-6" style="rotate: 5deg; margin-top: 160px;">
+            <div id="info-one" class="container col-6 offset-6" style="rotate: 5deg; margin-top: 160px;">
                     <div class="bg-white d-flex justify-content-center row shadow-lg" style="height: 400px; width: 400px; border-radius: 100%;">
                         <h4 class="text-uppercase align-self-end text-center dark">Visste du att...</h4>
                         <p class="text-center dark" style="width: 80%;">Dagens 18-åring är påväg att spendera 97% av sin kvarvarande fritid framför en skärm? Detta innebär att 667 månader under en livstid spenderas på mobilen.</p>
@@ -61,72 +63,63 @@
 
     <div class="container" style="margin-top: 300px;">
       <div class="d-flex col">
-        <div class="row">
-          <div class="col-10">
-            <h4 class="text-uppercase align-self-end text-center white">Visste du att...</h4>
-            <p class="text-center white">Dagens 18-åring är påväg att spendera 97% av sin kvarvarande fritid framför en skärm? Detta innebär att 667 månader under en livstid spenderas på mobilen.</p>
-          </div>
-          <div class="col-12 card form-card-body rounded-4 shadow-sm">
-              <div class="card-body">
+          <div class="col-8 offset-2 white form-card-body rounded-4">
+              <div class="card-body" style="height: 240px;">
                 <form action="#">
-                      <div id="stepOne">
+
+                      <div id="stepStart">
+                        <p class="d-flex justify-content-center invisible">1/2</p>
+                        <label for="range4" id="labelAge" class="form-label font-heading h4">Visste du att...</label>
+                        <p class="font-paragraph">Varje prick symboliserar en månad av ditt kvarvarande liv*. <br> 
+                          Färgerna symboliserar hur mycket tid du kommer att lägga på 
+                          vardagssysslor under resterande livstid. Skrämmande, vi vet! </p>
+                        <button id="btnBackStepStart" class="btn btn-secondary font-heading-bold" disabled>Läs mer</button>
+                        <button id="btnContinueStepStart" class="btn btn-primary font-heading-bold">Starta test</button>
+                      </div>
+
+                      <div id="stepOne" class="d-none">
                         <p class="d-flex justify-content-center">1/2</p>
-                        <label for="range4" id="labelAge" class="form-label h2">Din ålder:</label>
-                        <output for="range4" class="h2" id="rangeValueAge" aria-hidden="true"></output>
+                        <label for="range4" id="labelAge" class="form-label font-heading h4">Din ålder:</label>
+                        <output for="range4" class="h4" id="rangeValueAge" aria-hidden="true"></output>
                         <input id="ageOfUser" type="range" class="form-range" min="18" max="83" value="18">
-                        <button id="btnBackStepOne" class="btn btn-secondary" disabled>Tillbaka</button>
-                        <button id="btnContinueStepOne" class="btn btn-primary">Fortsätt</button>
+                        <button id="btnBackStepOne" class="btn btn-secondary font-heading-bold">Tillbaka</button>
+                        <button id="btnContinueStepOne" class="btn btn-primary font-heading-bold">Fortsätt</button>
                       </div>
 
                       <div id="stepTwo" class="d-none">
                         <p class="d-flex justify-content-center">1/2</p>
-                        <p>Varje prick symboliserar en månad av ditt kvarvarande liv*. <br> 
+                        <p class="font-paragraph">Varje prick symboliserar en månad av ditt kvarvarande liv*. <br> 
                           Färgerna symboliserar hur mycket tid du kommer att lägga på 
                           vardagssysslor under resterande livstid. Skrämmande, vi vet! </p>
-                        <button id="btnBackStepTwo" class="btn btn-secondary">Tillbaka</button>
-                        <button id="btnContinueStepTwo" class="btn btn-primary">Fortsätt</button>
+                        <button id="btnBackStepTwo" class="btn btn-secondary font-heading-bold">Tillbaka</button>
+                        <button id="btnContinueStepTwo" class="btn btn-primary font-heading-bold">Fortsätt</button>
                       </div>
 
                       <div id="stepThree" class="d-none">
                         <p class="d-flex justify-content-center">2/2</p>
-                        <label for="range4" id="labelScreen" class="form-label h6">Din skärmtid per dag:</label>
-                        <output for="range5" id="rangeValueTime" aria-hidden="true"></output>
+                        <label for="range4" id="labelScreen" class="form-label font-heading h4">Din skärmtid per dag:</label>
+                        <output for="range5" class="h4" id="rangeValueTime" aria-hidden="true"></output>
                         <input id="screenTime" type="range" class="form-range" min="0" max="24" step="0.5" value="0">
-                        <button id="btnBackStepThree" class="btn btn-secondary">Tillbaka</button>
-                        <button id="btnContinueStepThree" class="btn btn-primary">Fortsätt</button>
+                        <button id="btnBackStepThree" class="btn font-heading-bold btn-secondary">Tillbaka</button>
+                        <button id="btnContinueStepThree" class="btn font-heading-bold btn-primary">Fortsätt</button>
                       </div>
 
                       <div id="stepFour" class="d-none">
                         <p class="d-flex justify-content-center">2/2</p>
-                        <p>hawaofhawf pdfjfpoqwjwf pqjfåowfjwq  fåj. </p>
-                        <button id="btnBackStepFour" class="btn btn-secondary">Tillbaka</button>
-                        <button id="btnContinueStepFour" class="btn btn-primary">Fortsätt</button>
+                        <p class="font-paragraph">hawaofhawf pdfjfpoqwjwf pqjfåowfjwq  fåj. </p>
+                        <button id="btnBackStepFour" class="btn btn-secondary font-heading-bold">Tillbaka</button>
+                        <button id="btnContinueStepFour" class="btn btn-primary font-heading-bold">Fortsätt</button>
                       </div>
                 </form>
               </div>
             </div>
           </div>
-        <div class="col-7">
-        <div class="flip-card" id="myCard">
-            <div class="flip-card-inner bg-white shadow-sm pt-2">
-              <div class="d-flex justify-content-center">
-                <div class="indicator-dot-one"></div>
-                <div class="indicator-dot-two"></div>
-              </div>
-              <div class="flip-card-front">
-                <div id="dotGrid"></div>
-              <div class="flip-card-back">
-                <h1>John Doe</h1>
-                <p>Architect & Engineer</p>
-                <p>We love that guy</p>
-              </div>
-            </div>
-          </div>
-          <button class="flip-btn btn btn-secondary" id="flipBtn">Om ditt resultat</button>
         </div>
       </div>
-      </div>
-      </div>
+      <div class="col">
+        <div class="col-8 offset-2">
+          <div id="dotGrid"></div>
+        </div>
       </div>
     </div>
     </main>

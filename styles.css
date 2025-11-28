@@ -7,6 +7,12 @@
   }
 }
 
+#dotGrid.screen-mode .task-dot {
+  opacity: 0.5;
+  transition: opacity 0.4s ease;
+}
+
+
 /* Body bakgrund */
 body {
   position: relative;
@@ -88,19 +94,6 @@ header > *:not(.bubbles) {
   width: 100%;
   height: 400px;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
-}
-
-.indicator-dot-one {
-  height: 15px;
-  width: 15px;
-  background-color: black;
-  border-radius: 100%;
-}
-.indicator-dot-two {
-  height: 15px;
-  width: 15px;
-  border: 2px solid black;
-  border-radius: 100%;
 }
 
 /* This container is needed to position the front and back side */
