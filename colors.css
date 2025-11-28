@@ -14,6 +14,13 @@
     background-color: rgb(29, 29, 31);
 }
 
+.bg-dark-opacity {
+    background-color: rgb(29, 29, 31, 50%);
+     backdrop-filter: blur(10px);             /* själva frosteffekten */
+    -webkit-backdrop-filter: blur(10px);     /* Safari-support */
+}
+
+
 .bg-grad {
   background-image: radial-gradient(rgb(60, 60, 63), rgb(29, 29, 31));
   background-repeat: no-repeat;
