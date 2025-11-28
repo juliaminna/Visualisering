@@ -133,6 +133,17 @@ export function initDreamVacationForm() {
         continueFinal.addEventListener('click', () => {
         document.getElementById("stepFinal").classList.add('d-none');
         document.getElementById("stepStart").classList.remove('d-none');
+
+        ageInput.value = 18;
+        ageValue.textContent = ageInput.value;
+        timeInput.value = 0;
+        timeValue.textContent = timeInput.value;
+        recalculate();
+
+        const taskDots = document.querySelectorAll(".task-dot");
+        taskDots.forEach(dot => {
+            dot.style.opacity = "1";
+        });
     });
 
         saveFinal.addEventListener('click', () => {
