@@ -103,15 +103,6 @@ header > *:not(.bubbles) {
   border-radius: 100%;
 }
 
-.flip-card.flipped .indicator-dot-one {
-  background-color: white;
-  border: 2px solid black;
-}
-
-.flip-card.flipped .indicator-dot-two {
-  background-color: black;
-}
-
 /* This container is needed to position the front and back side */
 .flip-card-inner {
   position: relative;
@@ -144,9 +135,8 @@ header > *:not(.bubbles) {
 
 /* Style the back side */
 .flip-card-back {
-  background-color: #6b6b6b;
   transform: rotateY(180deg);
-    border-radius: 16px;
+  border-radius: 16px;
 }
 
 .flip-btn {

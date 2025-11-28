@@ -6,8 +6,8 @@ export const MONTHLY_TASKS = {
 };
 
 export const CATEGORY_COLORS = {
-    MATLAGNING: "#f39c12",      // orange
-    HUSHALLSSYSSLOR: "#27ae60", // grön
-    SOVA: "#2980b9",            // blå
-    JOBB_ELLER_STUDIER: "#8e44ad" // lila
+    MATLAGNING: "#ffc355",      // orange
+    HUSHALLSSYSSLOR: "#55ffb5", // grön
+    SOVA: "#55c1ff",            // blå
+    JOBB_ELLER_STUDIER: "#ee55ff" // lila
 };

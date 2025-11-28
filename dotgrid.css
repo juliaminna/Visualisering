@@ -1,14 +1,15 @@
 #dotGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 14px);
-    gap: 2px;
+    grid-template-columns: repeat(auto-fill, 12px);
+    gap: 1.5px;
     width: 100%;
     padding: 20px;
 }
 
 .dot {
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
     background: #b7b7b7;
     border-radius: 50%;
+    box-shadow: 1px 1px 4px white;
 }
