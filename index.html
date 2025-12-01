@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Screentime Wrapped</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css" />
@@ -79,9 +79,11 @@
                         <div class="d-flex justify-content-center">
                           <label for="range4" id="labelAge" class="form-label text-center font-heading h4">Hur ser din framtid ut?</label>
                         </div>
-                        <p class="font-paragraph text-center" style="height: 150px;">Varje prick symboliserar en månad av ditt kvarvarande liv*. <br> 
-                          Färgerna symboliserar hur mycket tid du kommer att lägga på 
-                          vardagssysslor under resterande livstid. Skrämmande, vi vet! </p>
+                        <p class="font-paragraph text-center" style="height: 150px;">Vi spenderar allt mer tid framför skärmar. 
+                          Många av oss har relativt bra koll på hur mycket skärmtid vi har per dag, eller kanske till och med per 
+                          vecka, men har du koll på hur stor del av ditt liv det faktiskt är? 
+                          <br><br>
+                          Ta vårt test för att se hur just <i>ditt</i> liv kommer att se ut.</p>
                           <div class="d-flex justify-content-center gap-2">
                             <button id="btnBackStepStart" class="btn btn-secondary font-heading-bold">Om testet</button>
                             <button id="btnContinueStepStart" class="btn btn-primary font-heading-bold">Starta test <i class='fa fa-arrow-right'></i></button>
@@ -109,8 +111,8 @@
                           <label for="range4" id="labelAge" class="form-label font-heading h4">Din ålder</label>
                         </div>
                         <p class="font-paragraph text-center" style="height: 150px;">Varje prick symboliserar en månad av ditt kvarvarande liv*. <br> 
-                          Färgerna symboliserar hur mycket tid du kommer att lägga på 
-                          vardagssysslor under resterande livstid. Skrämmande, vi vet! <br><br>
+                          Prickarna representerar hur mycket tid du kommer att lägga på <br> <span class="yellow">matlagning</span>, <span class="green"> hushållsysslor</span>, <span class="pink"> jobb/studier</span> och <span class="blue"> tid sovandes</span>
+                          under din livstid. Skrämmande, vi vet! <br><br>
                           Hur mycket utav denna tid tror du att du lägger framför en skärm? </p>
                         <div class="d-flex justify-content-center gap-2">
                           <button id="btnBackStepTwo" class="btn btn-secondary font-heading-bold">Tillbaka</button>
@@ -138,7 +140,7 @@
                         <div class="d-flex justify-content-center">
                           <label for="range4" id="labelScreen" class="form-label font-heading h4">Din skärmtid per dag</label>
                         </div>
-                        <p class="font-paragraph text-center" style="height: 150px;">hawaofhawf pdfjfpoqwjwf pqjfåowfjwq  fåj. </p>
+                        <p id="customScreenTime" class="font-paragraph text-center" style="height: 150px;"></p>
                         <div class="d-flex justify-content-center gap-2">
                           <button id="btnBackStepFour" class="btn btn-secondary font-heading-bold">Tillbaka</button>
                           <button id="btnContinueStepFour" class="btn btn-primary font-heading-bold">Fortsätt</button>

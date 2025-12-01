@@ -1,8 +1,6 @@
 import { CATEGORY_COLORS } from "./constants.js";
 
-// ------------------------------
-// Generate dots
-// ------------------------------
+
 export function updateDots(monthsLeft, tasksInMonths, totalScreenTime) {
     const container = document.getElementById("dotGrid");
     if (!container) return;
@@ -27,21 +25,19 @@ export function updateDots(monthsLeft, tasksInMonths, totalScreenTime) {
         }
     }
 
-    // 2️⃣ Rita prickar för skärmtid (svarta)
     const screenDots = Math.floor(totalScreenTime);
-    const screenDotsToDraw = Math.min(screenDots, monthsLeft - totalDots); // säkerställ att vi inte överskrider monthsLeft
+    const screenDotsToDraw = Math.min(screenDots, monthsLeft - totalDots);
 
     for (let i = 0; i < screenDotsToDraw; i++) {
         const dot = document.createElement("div");
         dot.classList.add("dot", "screen-dot");
-        dot.style.backgroundColor = "#ff5555"; // svart för skärmtid
+        dot.style.backgroundColor = "#ff5555";
         dot.style.animationDelay = `${(totalDots + i) * 0.01}s`;
         container.appendChild(dot);
     }
 
     totalDots += screenDotsToDraw;
 
-    // 3️⃣ Fyll upp resterande månader med grå prickar
     const remainingDots = monthsLeft - totalDots;
 
     for (let i = 0; i < remainingDots; i++) {

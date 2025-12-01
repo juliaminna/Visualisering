@@ -22,7 +22,7 @@ export function saveVisualization() {
   
   html2canvas(target).then(canvas => {
     const link = document.createElement("a");
-    link.download = "visualisering.jpg";
+    link.download = "screentime-wrapped_testresultat.jpg";
     link.href = canvas.toDataURL("image/jpeg", 0.9);
     link.click();
   });

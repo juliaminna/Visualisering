@@ -16,8 +16,8 @@
 
 .bg-dark-opacity {
     background-color: rgb(29, 29, 31, 50%);
-     backdrop-filter: blur(10px);             /* själva frosteffekten */
-    -webkit-backdrop-filter: blur(10px);     /* Safari-support */
+     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 

@@ -7,10 +7,6 @@
   }
 }
 
-#dotGrid.screen-mode .task-dot {
-  opacity: 0.5;
-  transition: opacity 0.4s ease;
-}
 
 .range-wrapper {
   position: relative;
@@ -120,41 +116,6 @@ header > *:not(.bubbles) {
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
-/* This container is needed to position the front and back side */
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-/* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card.flipped .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-/* Position the front and back side */
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
-}
-
-/* Style the front side (fallback if image is missing) */
-.flip-card-front {
-    border-color: #6b6b6b;
-    border-radius: 16px;
-}
-
-/* Style the back side */
-.flip-card-back {
-  transform: rotateY(180deg);
-  border-radius: 16px;
-}
 
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;  /* ta bort standardstil */

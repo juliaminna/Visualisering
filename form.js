@@ -41,29 +41,6 @@ export function initDreamVacationForm() {
 
     ageValue.textContent = ageInput.value;
 
-    continueTwo.addEventListener('click', () => {
-        document.getElementById("stepTwo").classList.add('d-none');
-        document.getElementById("stepThree").classList.remove('d-none');
-
-        // 🔻 Dämpa sysslorna när skärmtiden just ska visas
-        document.getElementById("dotGrid").classList.add("screen-mode");
-    });
-
-    backThree.addEventListener('click', () => {
-        document.getElementById("stepThree").classList.add('d-none');
-        document.getElementById("stepTwo").classList.remove('d-none');
-
-        // 🔺 Återställ prickarnas opacitet
-        document.getElementById("dotGrid").classList.remove("screen-mode");
-    });
-
-    continueThree.addEventListener('click', () => {
-        document.getElementById("stepThree").classList.add('d-none');
-        document.getElementById("stepFour").classList.remove('d-none');
-
-        // (ev. låt screen-mode ligga kvar)
-    });
-
 
 
 
@@ -106,15 +83,18 @@ export function initDreamVacationForm() {
 
     });
 
-    continueThree.addEventListener('click', () => {
+        continueThree.addEventListener('click', () => {
         document.getElementById("stepThree").classList.add('d-none');
         document.getElementById("stepFour").classList.remove('d-none');
+        document.getElementById("customScreenTime").innerHTML = `De röda prickarna visar på hur stor del av din kvarvarande livstid som kommer att spenderas framför en skärm.<br><br> Detta innebär att spenderas`;
 
     });
+
 
         backThree.addEventListener('click', () => {
         document.getElementById("stepThree").classList.add('d-none');
         document.getElementById("stepTwo").classList.remove('d-none');
+
 
     });
 
@@ -140,18 +120,9 @@ export function initDreamVacationForm() {
         timeValue.textContent = timeInput.value;
         recalculate();
 
-        const taskDots = document.querySelectorAll(".task-dot");
-        taskDots.forEach(dot => {
-            dot.style.opacity = "1";
-        });
-    });
-
-        saveFinal.addEventListener('click', () => {
-        // LADDA NER VISUALISERINGEN OCH DATAN.
     });
 
 
-    // Screen time range
     const timeInput = document.getElementById('screenTime');
     const timeValue = document.getElementById('rangeValueTime');
 
@@ -165,16 +136,11 @@ export function initDreamVacationForm() {
         recalculate();
     }, 250));
 
-
-    // Första körningen
     recalculate();
 }
 
 
 
-// ------------------------------
-// CALCULATE EVERYTHING
-// ------------------------------
 export function recalculate() {
     const age = Number(document.getElementById("ageOfUser").value);
     const screenTime = Number(document.getElementById("screenTime").value);
@@ -182,7 +148,7 @@ export function recalculate() {
     const yearsLeft = 83.82 - age;
     const monthsLeft = Math.round(yearsLeft * 12);
 
-    const monthlyScreenTime = screenTime * 30.4375; // minuter per månad
+    const monthlyScreenTime = screenTime * 30.4375;
     const percentageOfMonth = monthlyScreenTime / 730.5; 
     const totalScreenTime = monthsLeft * percentageOfMonth;
 
@@ -195,6 +161,5 @@ export function recalculate() {
         tasksInMonths[key] = Math.round(monthsSpent);
     }
 
-    // Skicka med totalScreenTime avrundat till heltal prickar
     updateDots(monthsLeft, tasksInMonths, Math.round(totalScreenTime));
 }
