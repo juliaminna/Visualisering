@@ -52,4 +52,3 @@ export function updateDots(monthsLeft, tasksInMonths, totalScreenTime) {
         container.appendChild(dot);
     }
 }
-
