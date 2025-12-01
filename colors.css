@@ -46,3 +46,23 @@
 .yellow {
     color: #ffc355;
 }
+
+.op-bg-green {
+    background-color: rgba(85, 255, 181, 0.7);
+}
+
+.op-bg-red {
+    background-color: rgba(255, 85, 85, 0.7);
+}
+
+.op-bg-pink {
+    background-color: rgba(238, 85, 255, 0.7);
+}
+
+.op-bg-blue {
+    background-color: rgba(85, 193, 255, 0.7);
+}
+
+.op-bg-yellow {
+    background-color: rgba(255, 195, 85, 0.7);
+}

@@ -41,32 +41,6 @@ export function initDreamVacationForm() {
 
     ageValue.textContent = ageInput.value;
 
-    continueTwo.addEventListener('click', () => {
-        document.getElementById("stepTwo").classList.add('d-none');
-        document.getElementById("stepThree").classList.remove('d-none');
-
-        // 🔻 Dämpa sysslorna när skärmtiden just ska visas
-        document.getElementById("dotGrid").classList.add("screen-mode");
-    });
-
-    backThree.addEventListener('click', () => {
-        document.getElementById("stepThree").classList.add('d-none');
-        document.getElementById("stepTwo").classList.remove('d-none');
-
-        // 🔺 Återställ prickarnas opacitet
-        document.getElementById("dotGrid").classList.remove("screen-mode");
-    });
-
-    continueThree.addEventListener('click', () => {
-        document.getElementById("stepThree").classList.add('d-none');
-        document.getElementById("stepFour").classList.remove('d-none');
-
-        // (ev. låt screen-mode ligga kvar)
-    });
-
-
-
-
     // Uppdatera texten direkt
     ageInput.addEventListener('input', () => {
         ageValue.textContent = ageInput.value;
@@ -98,6 +72,7 @@ export function initDreamVacationForm() {
         document.getElementById("stepTwo").classList.add('d-none');
         document.getElementById("stepThree").classList.remove('d-none');
 
+        document.getElementById("dotGrid").classList.add("screen-mode");
     });
 
     backTwo.addEventListener('click', () => {
@@ -110,11 +85,16 @@ export function initDreamVacationForm() {
         document.getElementById("stepThree").classList.add('d-none');
         document.getElementById("stepFour").classList.remove('d-none');
 
+        document.getElementById("dotGrid").classList.remove("screen-mode");
+        document.getElementById("customScreenTime").innerHTML = `De <span class="red">röda prickarna</span> visar på hur stor del av din kvarvarande livstid som kommer att spenderas framför en skärm. <br><br> Detta innebär att  spenderas.`
+
     });
 
-        backThree.addEventListener('click', () => {
+    backThree.addEventListener('click', () => {
         document.getElementById("stepThree").classList.add('d-none');
         document.getElementById("stepTwo").classList.remove('d-none');
+
+        document.getElementById("dotGrid").classList.remove("screen-mode");
 
     });
 
@@ -128,22 +108,21 @@ export function initDreamVacationForm() {
         document.getElementById("stepFour").classList.add('d-none');
         document.getElementById("stepThree").classList.remove('d-none');
 
+        document.getElementById("dotGrid").classList.add("screen-mode");
+
     });
 
         continueFinal.addEventListener('click', () => {
         document.getElementById("stepFinal").classList.add('d-none');
         document.getElementById("stepStart").classList.remove('d-none');
 
+        document.getElementById("dotGrid").classList.remove("screen-mode");
+
         ageInput.value = 18;
         ageValue.textContent = ageInput.value;
         timeInput.value = 0;
         timeValue.textContent = timeInput.value;
         recalculate();
-
-        const taskDots = document.querySelectorAll(".task-dot");
-        taskDots.forEach(dot => {
-            dot.style.opacity = "1";
-        });
     });
 
         saveFinal.addEventListener('click', () => {
@@ -182,7 +161,7 @@ export function recalculate() {
     const yearsLeft = 83.82 - age;
     const monthsLeft = Math.round(yearsLeft * 12);
 
-    const monthlyScreenTime = screenTime * 30.4375; // minuter per månad
+    const monthlyScreenTime = screenTime * 30.4375;
     const percentageOfMonth = monthlyScreenTime / 730.5; 
     const totalScreenTime = monthsLeft * percentageOfMonth;
 
@@ -195,6 +174,6 @@ export function recalculate() {
         tasksInMonths[key] = Math.round(monthsSpent);
     }
 
-    // Skicka med totalScreenTime avrundat till heltal prickar
+    // Rita om alla prickar
     updateDots(monthsLeft, tasksInMonths, Math.round(totalScreenTime));
 }
