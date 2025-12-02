@@ -8,7 +8,7 @@ import {
 });
 
 export function saveVisualization() {
-  const target = document.getElementById("dotGrid");
+  const target = document.getElementById("visualization");
   
   html2canvas(target).then(canvas => {
     const link = document.createElement("a");
