@@ -1,6 +1,9 @@
 import { MONTHLY_TASKS } from "./constants.js";
 import  { updateDots } from "./flipcard.js";
 
+
+let GLOBAL_totalScreenTime = 0;
+
 // ------------------------------
 // Debounce helper
 // ------------------------------
@@ -86,7 +89,7 @@ export function initDreamVacationForm() {
         document.getElementById("stepFour").classList.remove('d-none');
 
         document.getElementById("dotGrid").classList.remove("screen-mode");
-        document.getElementById("customScreenTime").innerHTML = `De <span class="red">röda prickarna</span> visar på hur stor del av din kvarvarande livstid som kommer att spenderas framför en skärm. <br><br> Detta innebär att  spenderas.`
+        document.getElementById("customScreenTime").innerHTML = `De <span class="red font-paragraph-bold">röda prickarna</span> visar på hur stor del av din kvarvarande livstid som kommer att spenderas framför en skärm. <br><br> Detta innebär att du kommer att spendera ${GLOBAL_totalScreenTime} månader av ditt liv framför en skärm.`
 
     });
 
@@ -176,4 +179,12 @@ export function recalculate() {
 
     // Rita om alla prickar
     updateDots(monthsLeft, tasksInMonths, Math.round(totalScreenTime));
+    console.log(totalScreenTime);
+
+    GLOBAL_totalScreenTime = Math.round(totalScreenTime);
+
 }
+
+// 🔥 Gör funktionen global samtidigt
+window.recalculate = recalculate;
+

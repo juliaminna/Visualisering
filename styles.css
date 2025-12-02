@@ -165,3 +165,7 @@ input[type=range]::-webkit-slider-thumb {
   cursor: pointer;
   margin-top: -5px;          /* centrerar pricken på linjen */
 }
+
+.btn-hover:hover {
+  text-decoration: underline !important;
+}

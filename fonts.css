@@ -31,3 +31,9 @@ font-family: "montserrat", sans-serif;
 font-weight: 300;
 font-style: normal;
 }
+
+.font-paragraph-bold {
+font-family: "montserrat", sans-serif;
+font-weight: 700;
+font-style: normal;
+}
