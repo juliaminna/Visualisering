@@ -11,3 +11,18 @@ export const CATEGORY_COLORS = {
     JOBB_ELLER_STUDIER: "#ee55ff", // lila
     SOVA: "#55c1ff"           // blå
 };
+
+export const CATEGORY_LABELS = {
+    MATLAGNING: "Matlagning",      // orange
+    HUSHALLSSYSSLOR: "Hushållssysslor", // grön
+    JOBB_ELLER_STUDIER: "Jobb/studier", // lila
+    SOVA: "Sömn"  
+    // ... lägg till fler efter behov
+};
+
+export const CATEGORY_LEGEND_IDS = {
+    MATLAGNING: "legendCooking",
+    HUSHALLSSYSSLOR: "legendHousehold",
+    JOBB_ELLER_STUDIER: "legendWork",
+    SOVA: "legendSleep",
+};

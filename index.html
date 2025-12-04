@@ -111,7 +111,7 @@
                           <label for="range4" id="labelAge" class="form-label font-heading h4">Din ålder</label>
                         </div>
                         <p class="font-paragraph text-center" style="height: 150px;">Varje prick symboliserar en månad av ditt kvarvarande liv*. <br> 
-                          Prickarna representerar hur mycket tid du kommer att lägga på <br> <span class="yellow font-paragraph-bold">matlagning</span>, <span class="green font-paragraph-bold"> hushållsysslor</span>, <span class="pink font-paragraph-bold"> jobb/studier</span> och <span class="blue font-paragraph-bold"> tid sovandes</span>
+                          Prickarna representerar hur mycket tid du kommer att lägga på <br> <span class="yellow font-paragraph-bold">matlagning</span>, <span class="green font-paragraph-bold"> hushållsysslor</span>, <span class="pink font-paragraph-bold"> jobb/studier</span> och <span class="blue font-paragraph-bold"> sömn</span>
                           under din livstid. <br> Skrämmande, vi vet! <br><br>
                           Hur mycket utav denna tid tror du att du lägger framför en skärm? </p>
                         <div class="d-flex justify-content-center gap-2">
@@ -168,15 +168,35 @@
       <div id="visualization" class="col">
         <div class="col-8 offset-2">
           <div id="dotGrid"></div>
-        </div>
-        <div class="container">
-          <div class="d-flex justify-content-center">
-            <div class="col-2 op-bg-yellow p-1 m-2" style="height: 32px; border-radius: 9999px;"><p class="text-center text-uppercase font-heading-bold white">Matlagning</p></div>
-            <div class="col-2 op-bg-green p-1 m-2" style="height: 32px; border-radius: 9999px;"><p class="text-center text-uppercase font-heading-bold white">Hushåll</p></div>
-            <div class="col-2 op-bg-pink p-1 m-2" style="height: 32px; border-radius: 9999px;"><p class="text-center text-uppercase font-heading-bold white">Jobb/studier</p></div>
-            <div class="col-2 op-bg-blue p-1 m-2" style="height: 32px; border-radius: 9999px;"><p class="text-center text-uppercase font-heading-bold white">Sömn</p></div>
+          <div class="container row">
+            <div class="col-5">
+              <div class="d-flex col justify-content-between" style="height: 28px;">
+                <p><span class="yellow font-paragraph-bold m-2">Matlagning:</span></p>
+                <p id="legendCooking" class="white font-paragraph-bold"></p>
+              </div>
+              <div class="d-flex col justify-content-between" style="height: 28px;">
+                <p><span class="green font-paragraph-bold m-2"> Hushållsysslor:</span></p>
+                <p id="legendHousehold" class="white font-paragraph-bold"></p>
+              </div>
+              <div class="d-flex col justify-content-between" style="height: 28px;">
+                <p><span class="pink font-paragraph-bold m-2"> Jobb/studier:</span></p>
+                <p id="legendWork" class="white font-paragraph-bold"></p>
+              </div>
+            </div>
+            <div class="col-5 offset-2">
+              <div class="d-flex col justify-content-between" style="height: 28px;">
+                <p><span class="blue font-paragraph-bold m-2"> Sömn:</span></p>
+                <p id="legendSleep" class="white font-paragraph-bold"></p>
+              </div>
+              <div class="d-flex col justify-content-between" style="height: 28px;">
+                <p><span class="gray font-paragraph-bold m-2"> Fritid:</span></p>
+                <p id="legendFreetime" class="white font-paragraph-bold"></p>
+              </div>
+              <div class="d-flex col justify-content-between" style="height: 28px;">
+                <p><span class="red font-paragraph-bold m-2"> Skärmtid:</span></p>
+                <p id="legendScreentime" class="white font-paragraph-bold"></p>
+              </div>
           </div>
-        </div>
       </div>
     </div>
 

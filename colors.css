@@ -47,6 +47,10 @@
     color: #ffc355;
 }
 
+.gray {
+    color: #ccc;
+}
+
 .op-bg-green {
     background-color: rgba(85, 255, 181, 0.7);
 }

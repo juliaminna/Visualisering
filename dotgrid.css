@@ -13,3 +13,107 @@
     border-radius: 50%;
     box-shadow: 1px 1px 4px rgb(0, 0, 0);
 }
+
+.task-dot {
+    position: relative;
+}
+
+/* Tooltip-bubblan */
+.task-dot:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -45px; /* avstånd ovanför pricken */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    color: #000;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    pointer-events: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+/* Liten triangel under bubblan */
+.task-dot:hover::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    z-index: 1001;
+}
+
+.remaining-dot {
+    position: relative;
+}
+
+.remaining-dot:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    color: #000;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    pointer-events: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.remaining-dot:hover::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    z-index: 1001;
+}
+
+
+
+.screen-dot {
+    position: relative;
+}
+
+.screen-dot:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    color: #000;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    pointer-events: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.screen-dot:hover::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    z-index: 1001;
+}
+
