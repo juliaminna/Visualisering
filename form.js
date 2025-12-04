@@ -57,6 +57,9 @@ export function initDreamVacationForm() {
     continueStart.addEventListener('click', () => {
         document.getElementById("stepStart").classList.add('d-none');
         document.getElementById("stepOne").classList.remove('d-none');
+        document.querySelectorAll(".legendStepOne").forEach(el => {
+            el.classList.remove("d-none");
+        });
     });
 
     continueOne.addEventListener('click', () => {
@@ -74,8 +77,11 @@ export function initDreamVacationForm() {
     continueTwo.addEventListener('click', () => {
         document.getElementById("stepTwo").classList.add('d-none');
         document.getElementById("stepThree").classList.remove('d-none');
-
         document.getElementById("dotGrid").classList.add("screen-mode");
+
+        document.querySelectorAll(".legendStepTwo").forEach(el => {
+            el.classList.remove("d-none");
+        });
     });
 
     backTwo.addEventListener('click', () => {
