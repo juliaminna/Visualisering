@@ -85,8 +85,27 @@
                           <br><br>
                           Ta vårt test för att se hur just <i>ditt</i> liv kommer att se ut.</p>
                           <div class="d-flex justify-content-center gap-2">
-                            <button id="btnBackStepStart" class="btn btn-secondary font-heading-bold">Om testet</button>
+                            <button id="btnBackStepStart" class="btn btn-secondary font-heading-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">Om testet</button>
                             <button id="btnContinueStepStart" class="btn btn-primary font-heading-bold">Starta test <i class='fa fa-arrow-right'></i></button>
+                          </div>
+
+                          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                              <div class="modal-content bg-dark">
+                                <div class="modal-header">
+                                  <h1 class="white font-heading-bold modal-title fs-5" id="exampleModalLabel">Om testet</h1>
+                                  <button type="button" class="btn-close" style="background-color: azure" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  <h5 class="white font-heading">Vad baseras livslängden på?</h5>
+                                  <p class="white">Den livslängd som används i testet är baserat på den medellivslängd som mätts i Sverige av SCB (Statistiska Centralbyrån) år XXXX, vilket är ca. 83 år.</p>
+                                  <h5 class="white font-heading">Vad baseras sysslornas tidsåtgång på?</h5>
+                                  <p class="white">Den estimerade tidsåtgången för de olika "sysslorna" i testet baseras på en studie ifrån SCB (Statistiska Centralbyrån) där det utmätts hur mycket tid svenskar lägger på olika vardagssysslor.</p>
+                                  <h5 class="white font-heading">Ingen data lagras</h5>
+                                  <p class="white">Dina svar i testet sparas inte. All information används enbart under sessionen och raderas automatiskt när du stänger webbläsaren eller sidan.</p>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                       </div>
 
@@ -97,7 +116,7 @@
                         </div>
                         <div class="justify-content-center text-center mt-3" style="height: 150px;">
                           <output for="range4" class="h4" id="rangeValueAge" aria-hidden="true"></output>
-                          <input id="ageOfUser" type="range" class="form-range" style="" min="18" max="83" value="18">
+                          <input id="ageOfUser" type="range" class="form-range" min="18" max="83" value="18">
                         </div>
                         <div class="d-flex justify-content-center gap-2">
                           <button id="btnBackStepOne" class="btn btn-secondary font-heading-bold">Tillbaka</button>
@@ -212,6 +231,18 @@
         </div>
     </div>
     </main>
+    <footer class="bg-dark-opacity" style="height: 400px;">
+      <div class="container row pt-5">
+        <p class="col-4 offset-2 white">Denna sida har skapats som ett arbete för kursen <i>"Visualisering"</i> på Högskolan Dalarna.</p>
+        <div class="col-3 offset-3 white">
+          <p>Mer om ämnet:</p>
+          <a href="https://internetstiftelsen.se/">
+            <img style="width: 200px;" src="/img/internetstiftelsen_negative.svg" alt="Internetstiftelsens logotyp.">
+          </a>
+        </div>
+      </div>
+      <p class="text-center white" style="margin-top: 140px;">Lukas Holmgren, Matilda Israelsson, Julia Maberg | 2025 - All rights reserved ©</p>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="script.js" type="module"></script>

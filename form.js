@@ -72,6 +72,13 @@ export function initDreamVacationForm() {
         document.getElementById("stepOne").classList.add('d-none');
         document.getElementById("stepStart").classList.remove('d-none');
 
+        document.querySelectorAll(".legendStepTwo").forEach(el => {
+            el.classList.add("d-none");
+        });
+
+        document.querySelectorAll(".legendStepOne").forEach(el => {
+            el.classList.add("d-none");
+        });
     });
 
     continueTwo.addEventListener('click', () => {
@@ -126,6 +133,14 @@ export function initDreamVacationForm() {
         document.getElementById("stepStart").classList.remove('d-none');
 
         document.getElementById("dotGrid").classList.remove("screen-mode");
+
+        document.querySelectorAll(".legendStepTwo").forEach(el => {
+            el.classList.add("d-none");
+        });
+
+        document.querySelectorAll(".legendStepOne").forEach(el => {
+            el.classList.add("d-none");
+        });
 
         ageInput.value = 18;
         ageValue.textContent = ageInput.value;
