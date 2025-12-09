@@ -15,7 +15,7 @@
   </head>
 <body class="bg-grad">
 
-      <nav class="sticky-top pt-2 pb-3 bg-dark-opacity">
+      <nav class="header pt-2 pb-3 bg-dark-opacity">
         <div class="container">
             <div class="col">
                 <div class="d-flex justify-content-between align-items-center mt-3">
@@ -36,9 +36,9 @@
     <div class="bubble" style="--size: 140px; --x: 6%; --y: 10%; --color: #ffc355;"></div>
     <div class="bubble" style="--size: 80px; --x: 85%; --y: 5%; --color: #55ffb5;"></div>
     <div class="bubble" style="--size: 220px; --x: 92%; --y: 8%; --color: #55c1ff;"></div>
-    <div class="bubble" style="--size: 190px; --x: 12%; --y: 35%; --color: #ffc355;"></div>
-    <div class="bubble" style="--size: 350px; --x: -6%; --y: 29%; --color: #55ffb5"></div>
-    <div class="bubble" style="--size: 130px; --x: 75%; --y: 80%; --color: #55ffb5;"></div>
+    <div class="bubble" style="--size: 190px; --x: 12%; --y: 30%; --color: #ffc355;"></div>
+    <div class="bubble" style="--size: 270px; --x: -7%; --y: 27%; --color: #55ffb5"></div>
+    <div class="bubble" style="--size: 140px; --x: 75%; --y: 80%; --color: #55ffb5;"></div>
     <div class="bubble" style="--size: 60px; --x: 69%; --y: 84%; --color: #ee55ff;"></div>    
     <div class="bubble" style="--size: 120px; --x: 92%; --y: 48%; --color: #55c1ff;"></div>
     <!-- lägg till fler bubblor -->
@@ -64,7 +64,7 @@
             <div id="info-one" class="container col-6 offset-6" style="rotate: 5deg; margin-top: 250px;">
                     <div class="bg-white d-flex justify-content-center row shadow-lg" style="height: 400px; width: 400px; border-radius: 100%;">
                         <h4 class="text-uppercase align-self-end text-center dark">Visste du att...</h4>
-                        <p class="text-center dark" style="width: 80%;">Dagens 18-åring är påväg att spendera 97% av sin kvarvarande fritid framför en skärm? Detta innebär att <i>667 månader</i> under en livstid <i>spenderas på mobilen.</i></p>
+                        <p class="text-center dark" style="width: 85%;">dagens 18-åring är påväg att spendera 77% av sin kvarvarande fritid framför en skärm? Detta motsvarar <br> <i>230 månader av livet.</i></p>
                     </div>
             </div>
         </div>
@@ -93,18 +93,21 @@
 
                           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                              <div class="modal-content bg-dark">
+                              <div class="modal-content bg-dark" style="height: 600px;">
                                 <div class="modal-header">
                                   <h1 class="white font-heading-bold modal-title fs-5" id="exampleModalLabel">Om testet</h1>
                                   <button type="button" class="btn-close" style="background-color: azure" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
+                                  <p class="white" style="margin-bottom: 40px;">Syftet med denna visualisering är inte att ge ett exakt facit över din framtida skärmtid, utan att erbjuda ett perspektiv på hur vardaglig skärmanvändning kan adderas över tid.</p>
                                   <h5 class="white font-heading">Vad baseras livslängden på?</h5>
-                                  <p class="white">Den livslängd som används i testet är baserat på den medellivslängd som mätts i Sverige av SCB (Statistiska Centralbyrån) år XXXX, vilket är ca. 83 år.</p>
+                                  <p class="white">Den livslängd som används i testet är baserat på den medellivslängd som mätts i Sverige av <i>SCB</i> (Statistiska Centralbyrån) år 2024, vilket är ca. 83 år.</p>
+                                  <h5 class="white font-heading">Vad om aktiviteterna överlappar?</h5>
+                                  <p class="white">Detta är en möjlighet som vi är medvetna om, men inte tagit i beaktning i testet. Då både skärm och vardagssysslor kan ske samtidigt kan visualiseringen överskatta total skärmtid. Exempel: du kan titta på serier medan du äter, eller scrolla medan du pendlar. Visualiseringen skiljer inte heller på aktiv och passiv skärmtid. Siffrorna bör därför tolkas som en förenklad modell med syftet att väcka reflektion, <i>inte en exakt livsprognos.</i> </p>
                                   <h5 class="white font-heading">Vad baseras sysslornas tidsåtgång på?</h5>
-                                  <p class="white">Den estimerade tidsåtgången för de olika "sysslorna" i testet baseras på en studie ifrån SCB (Statistiska Centralbyrån) där det utmätts hur mycket tid svenskar lägger på olika vardagssysslor.</p>
+                                  <p class="white">Den estimerade tidsåtgången för de olika "sysslorna" i testet baseras på en studie ifrån <i>SCB</i> (Statistiska Centralbyrån) där det utmätts hur mycket tid svenskar lägger på olika vardagssysslor.</p>
                                   <h5 class="white font-heading">Ingen data lagras</h5>
-                                  <p class="white">Dina svar i testet sparas inte. All information används enbart under sessionen och raderas automatiskt när du stänger webbläsaren eller sidan.</p>
+                                  <p class="white">Dina svar i testet <i>sparas inte</i>. All information används enbart under sessionen och raderas automatiskt när du stänger webbläsaren eller sidan.</p>
                                 </div>
                               </div>
                             </div>
@@ -174,7 +177,7 @@
                         <div class="d-flex justify-content-center">
                           <label for="range4" id="labelScreen" class="form-label font-heading h4">Vad innebär detta?</label>
                         </div>
-                        <p class="font-paragraph text-center" style="height: 150px;">Tiden du lägger framför en skärm hade kunnat gått till annat. Visste du att med tiden du lägger framför en skärm under en livstid hade istället kunnat gå 3 varv runt jorden. <br><br> Hade du minskat din skärmtid med 1 timme i veckan hade du haft 95 månader till över till annat under din livstid. </p>
+                        <p id="whatThisMeans" class="font-paragraph text-center" style="height: 150px;"></p>
                         <div class="d-flex justify-content-center gap-2">
                           <button id="btnSaveFinal" class="btn btn-secondary font-heading-bold" onclick="saveVisualization()">Spara resultat <i class='fa fa-clone'></i></button>
                           <button id="btnContinueFinal" class="btn btn-primary font-heading-bold">Ta om test <i class="fa fa-refresh"></i></button>
@@ -224,10 +227,10 @@
 
     <div class="container">
         <div class="col">
-            <div id="info-one" class="container col-9" style="rotate: -5deg; margin-top: 400px;">
+            <div id="info-one" class="container col-12" style="rotate: -5deg; margin-top: 400px;">
                     <div class="bg-white d-flex justify-content-center row shadow-lg" style="height: 400px; width: 400px; border-radius: 100%;">
-                        <h4 class="text-uppercase align-self-end text-center dark">klockan tickar...</h4>
-                        <p class="text-center dark" style="width: 80%;">Dagens 18-åring är påväg att spendera 97% av sin kvarvarande fritid framför en skärm? Detta innebär att 667 månader under en livstid spenderas på mobilen.</p>
+                      <h4 class="text-uppercase align-self-end text-center dark">Visste du att...</h4>
+                      <p class="text-center dark" style="width: 80%;">Genomsnitts-svensken är påväg att spendera <i>667 månader</i> under en livstid <i>spenderas på mobilen.</i> <br> Hur </p>
                     </div>
             </div>
         </div>

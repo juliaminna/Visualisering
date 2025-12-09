@@ -3,6 +3,10 @@ import  { updateDots } from "./flipcard.js";
 
 
 let GLOBAL_totalScreenTime = 0;
+let GLOBAL_dividedTime = 0;
+let GLOBAL_timeSavedWithNewScreenTime = 0;
+let GLOBAL_phrasingForTime = 0;
+
 
 // ------------------------------
 // Debounce helper
@@ -102,7 +106,7 @@ export function initDreamVacationForm() {
         document.getElementById("stepFour").classList.remove('d-none');
 
         document.getElementById("dotGrid").classList.remove("screen-mode");
-        document.getElementById("customScreenTime").innerHTML = `De <span class="red font-paragraph-bold">röda prickarna</span> visar på hur stor del av din kvarvarande livstid som kommer att spenderas framför en skärm. <br><br> Detta innebär att du kommer att spendera ${GLOBAL_totalScreenTime} månader av ditt liv framför en skärm.`
+        document.getElementById("customScreenTime").innerHTML = `De <span class="red font-paragraph-bold">röda prickarna</span> visar på hur stor del av din kvarvarande livstid som kommer att spenderas framför en skärm. <br><br> Detta innebär att du kommer att spendera <span class="op-bg-red font-paragraph-bold" style="height: 28px; padding-left: 5px; padding-right: 5px; border-radius: 8px;">${GLOBAL_totalScreenTime} månader</span> av ditt liv framför en skärm.`
 
     });
 
@@ -117,6 +121,7 @@ export function initDreamVacationForm() {
         continueFour.addEventListener('click', () => {
         document.getElementById("stepFour").classList.add('d-none');
         document.getElementById("stepFinal").classList.remove('d-none');
+        document.getElementById("whatThisMeans").innerHTML = `Tiden du lägger framför en skärm hade kunnat gått till annat. Visste du att med tiden du lägger framför en skärm under en livstid hade istället kunnat gå <span class="op-bg-red font-paragraph-bold" style="height: 28px; padding-left: 5px; padding-right: 5px; border-radius: 8px;">${Math.round(GLOBAL_totalScreenTime / 11)} varv runt jorden.</span> <br><br> Hade du minskat din skärmtid med ${GLOBAL_dividedTime} ${GLOBAL_phrasingForTime} i veckan hade du haft <br> <span class="op-bg-red font-paragraph-bold" style="height: 28px; padding-left: 5px; padding-right: 5px; border-radius: 8px;"> ${GLOBAL_timeSavedWithNewScreenTime} månader över till annat</span> under din livstid.`
 
     });
 
@@ -197,6 +202,26 @@ export function recalculate() {
         const monthsSpent = fractionOfMonth * monthsLeft;
         tasksInMonths[key] = Math.round(monthsSpent);
     }
+
+    const dividedTime = Math.round(screenTime / 4);
+    const recomendedScreenTime = screenTime - dividedTime;
+    const newMonthyScreenTme = recomendedScreenTime * 30.4375;
+    const newPercentageOfMonth = newMonthyScreenTme / 730.5;
+    const newTotalScreenTime = monthsLeft * newPercentageOfMonth;
+    const timeSavedWithNewScreenTime = totalScreenTime - newTotalScreenTime;
+
+    let phrasingForTime = "";
+
+    if (dividedTime > 1) {
+        phrasingForTime = "timmar";
+    } else {
+        phrasingForTime = "timme";
+    }
+
+    GLOBAL_dividedTime = dividedTime;
+    GLOBAL_timeSavedWithNewScreenTime = Math.round(timeSavedWithNewScreenTime);
+    GLOBAL_phrasingForTime = phrasingForTime;
+
 
     // Rita om alla prickar
     updateDots(monthsLeft, tasksInMonths, Math.round(totalScreenTime));
