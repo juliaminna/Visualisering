@@ -24,24 +24,35 @@
 }
 
 
-.horizontal-scroll-section {
-  overflow-x: auto; /* horisontell scroll */
-  overflow-y: hidden;
-  white-space: nowrap; /* se till att innehållet inte radbryts */
-  height: 300px; /* höjd på section */
+#wrapper {
+    height: 500vh;
+    overflow: visible;
+    view-timeline-name: --section-pin-t1;
+    view-timeline-axis: block;
 }
 
-.no-scroll {
-    overflow-x: hidden;
+.stickier {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-x: hidden; /* döljer horisontell scroll, för animation */
 }
 
-.bubble-box {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  margin-right: 20px;
-  background-color: #fff;
+
+@keyframes move {
+    to {
+    transform: translateX(calc(-100% + 100vw));
+    }
+}
+
+.horizontal-strip {
+    display: none;
+    gap: 3rem;
+    height: 100%;
+    padding: 2rem;
+    width: max-content;  /* så att strippen blir så bred som alla bubblor tillsammans */
+    overflow-x: scroll;
+    animation: move linear forwards;
+    animation-timeline: --section-pin-t1;
+    animation-range: contain 0% contain 100%;
 }

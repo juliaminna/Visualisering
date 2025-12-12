@@ -37,12 +37,21 @@ const observer = new IntersectionObserver((entries) => {
 observer.observe(timerElement.closest("section"));
 
 
-const section = document.querySelector('.horizontal-scroll-section');
-const inner = section.querySelector('div');
-const fullPage = document.getElementById('main-page');
 
-section.addEventListener('wheel', (e) => {
-    fullPage = e.deltaY;
-  e.preventDefault(); // stoppa vertikal scroll
-  section.scrollLeft += e.deltaY; // använd vertikalt wheeldrag för horisontell scroll
-});
+const wrapper = document.getElementById("wrapper");
+const strip = wrapper.querySelector(".horizontal-strip");
+
+$horizontalStrip.animation(
+    {
+        transform: ['', 'translateX(calc(-100% + 100vw))'],
+    },
+    {
+        timeline: new ViewTimeline({
+            subject: $wrapper,
+            axis: 'block',
+        }),
+        fill: 'forwards',
+        rangeStart: 'contain 0%',
+        rangeEnd: 'contain 100%',
+    }
+);
