@@ -1,12 +1,10 @@
 import {
   initDreamVacationForm,
 } from "./form.js";
-
-  initDreamVacationForm();
+initDreamVacationForm();
 
   document.addEventListener("DOMContentLoaded", () => {
 });
-
 
 
 export function saveVisualization() {
@@ -21,3 +19,5 @@ export function saveVisualization() {
 }
 
 window.saveVisualization = saveVisualization;
+
+

@@ -22,3 +22,26 @@
     transform-origin: 0 50%;
     background: azure;
 }
+
+
+.horizontal-scroll-section {
+  overflow-x: auto; /* horisontell scroll */
+  overflow-y: hidden;
+  white-space: nowrap; /* se till att innehållet inte radbryts */
+  height: 300px; /* höjd på section */
+}
+
+.no-scroll {
+    overflow-x: hidden;
+}
+
+.bubble-box {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin-right: 20px;
+  background-color: #fff;
+}
