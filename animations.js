@@ -1,3 +1,4 @@
+
 let timerInterval = null;
 let seconds = 0;
 
