@@ -7,6 +7,16 @@
   }
 }
 
+html {
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 40px;
+}
+
+.grid-snap {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
 .p-nav {
   padding-right: 20px;
 }
