@@ -7,6 +7,10 @@
   }
 }
 
+.p-nav {
+  padding-right: 20px;
+}
+
 #dotGrid.screen-mode .task-dot {
   opacity: 0.5;
   transition: opacity 0.4s ease;
@@ -178,3 +182,29 @@ input[type=range]::-webkit-slider-thumb {
 .btn-hover:hover {
   text-decoration: underline !important;
 }
+
+.percentage-one {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 22% → 79.2deg */
+  background: conic-gradient(
+    #0d6efd 0deg 79.2deg,
+    #e9ecef 79.2deg 360deg
+  );
+}
+
+.inner-circle {
+  width: 200px;
+  height: 200px;
+  background: white;
+  border-radius: 50%;
+}
+
+.percent {
+  font-size: 40px;
+}
+

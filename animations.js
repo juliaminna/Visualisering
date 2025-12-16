@@ -37,21 +37,17 @@ const observer = new IntersectionObserver((entries) => {
 observer.observe(timerElement.closest("section"));
 
 
+const bg = document.getElementById("phone-bg");
 
-const wrapper = document.getElementById("wrapper");
-const strip = wrapper.querySelector(".horizontal-strip");
+if (bg) {
+  const colors = ["#55ffb5", "#ff5555", "#ee55ff", "#55c1ff", "#ffc355"];
+  let index = 0;
 
-$horizontalStrip.animation(
-    {
-        transform: ['', 'translateX(calc(-100% + 100vw))'],
-    },
-    {
-        timeline: new ViewTimeline({
-            subject: $wrapper,
-            axis: 'block',
-        }),
-        fill: 'forwards',
-        rangeStart: 'contain 0%',
-        rangeEnd: 'contain 100%',
-    }
-);
+  bg.setAttribute("fill", colors[0]);
+
+  setInterval(() => {
+    bg.setAttribute("fill", colors[index]);
+    index = (index + 1) % colors.length;
+  }, 1700);
+}
+
