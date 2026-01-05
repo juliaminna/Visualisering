@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="https://use.typekit.net/awv5jeu.css">
   </head>
-<body class="bg-grad">
+<body id="no-scroll" class="bg-grad page-am-i-addicted">
       <nav class="header pt-2 pb-3 bg-dark-opacity">
         <div class="container">
             <div class="col">
@@ -69,6 +69,20 @@
 <div id="progress" style="margin-top: 73px;"></div>
 
 <main id="main-page">
+
+  <div class="sticky navigation-arrow-up">
+    <div class="d-flex align-items-center justify-content-center">
+      <i id="arrowUp" class="arrow up" style="margin-top: 120px;"></i>
+    </div>
+  </div>
+  <div class="navigation-arrow-down">
+    <div class="d-flex align-items-center justify-content-center">
+        <i id="arrowDown" class="arrow down" style="margin-top: 120px;"></i>
+    </div>
+  </div>
+
+
+
   <section class="grid-snap container d-flex align-items-center justify-content-center" style="height: 100dvh;">
     <div class="d-flex row">
       <h1 class="font-heading white col-12 text-center" style="font-size: 180px;">97%</h1>
@@ -78,7 +92,7 @@
     </div>
   </section>
 
-  <section class="grid-snap container d-flex align-items-center justify-content-center" style="height: 100dvh;">
+  <section id="section-two" class="grid-snap container d-flex align-items-center justify-content-center" style="height: 100dvh;">
     <div class="d-flex row">
       <h3 class="font-heading white col-12 text-center">Hur länge kan du stanna upp?</h3>
       <h1 id="timer" class="font-heading white col-12 text-center" style="font-size: 180px;">00:00</h1>

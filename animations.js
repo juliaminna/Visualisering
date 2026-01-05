@@ -51,3 +51,83 @@ if (bg) {
   }, 1700);
 }
 
+
+
+
+if (document.body.classList.contains("page-am-i-addicted")) {
+  initSectionNavigation();
+}
+
+function initSectionNavigation() {
+  const sections = [...document.querySelectorAll("main section")];
+  const arrowUp = document.getElementById("arrowUp");
+  const arrowDown = document.getElementById("arrowDown");
+
+  if (!arrowUp || !arrowDown || sections.length === 0) return;
+
+  let arrowsLocked = false;
+
+  function getCurrentSectionIndex() {
+    let index = 0;
+    sections.forEach((section, i) => {
+      if (section.getBoundingClientRect().top <= window.innerHeight / 2) {
+        index = i;
+      }
+    });
+    return index;
+  }
+
+  function updateArrowVisibility() {
+    const current = getCurrentSectionIndex();
+
+    arrowUp.style.opacity = current === 0 ? "0" : "1";
+    arrowUp.style.pointerEvents = current === 0 ? "none" : "auto";
+
+    arrowDown.style.opacity =
+      current === sections.length - 1 ? "0" : "1";
+    arrowDown.style.pointerEvents =
+      current === sections.length - 1 ? "none" : "auto";
+  }
+
+  function temporarilyHideArrows() {
+    arrowsLocked = true;
+
+    arrowUp.style.opacity = "0";
+    arrowDown.style.opacity = "0";
+    arrowUp.style.pointerEvents = "none";
+    arrowDown.style.pointerEvents = "none";
+
+    setTimeout(() => {
+      arrowsLocked = false;
+      updateArrowVisibility();
+    }, 5000);
+  }
+
+  arrowDown.addEventListener("click", () => {
+    if (arrowsLocked) return;
+
+    const next = sections[getCurrentSectionIndex() + 1];
+    if (next) {
+      next.scrollIntoView({ behavior: "smooth" });
+      temporarilyHideArrows();
+    }
+  });
+
+  arrowUp.addEventListener("click", () => {
+    if (arrowsLocked) return;
+
+    const prev = sections[getCurrentSectionIndex() - 1];
+    if (prev) {
+      prev.scrollIntoView({ behavior: "smooth" });
+      temporarilyHideArrows();
+    }
+  });
+
+  window.addEventListener("scroll", () => {
+    if (!arrowsLocked) {
+      updateArrowVisibility();
+    }
+  });
+
+  updateArrowVisibility();
+}
