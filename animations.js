@@ -100,7 +100,7 @@ function initSectionNavigation() {
     setTimeout(() => {
       arrowsLocked = false;
       updateArrowVisibility();
-    }, 5000);
+    });
   }
 
   arrowDown.addEventListener("click", () => {
