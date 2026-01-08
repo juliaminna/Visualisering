@@ -75,7 +75,19 @@
         </div>
 </header>
 <div id="progress" style="margin-top: 73px;"></div>
-<main style="height: 3000px;">
+<main class="" style="height: 3000px;">
+
+<div id="welcomeModal" class="modal-overlay">
+  <div class="modal-box">
+    <h2>Observera!</h2>
+    <p>
+      Sidan är ännu ej responsiv, och bör därav besökas i skärmvidden <b>1020 px</b>.
+    </p>
+    <button class="btn btn-primary" id="closeModal">Jag förstår</button>
+  </div>
+</div>
+
+
     <div class="container">
         <div class="col">
             <div id="info-one" class="container col-6 offset-6" style="rotate: 5deg; margin-top: 250px;">
@@ -206,8 +218,8 @@
           </div>
         </div>
       </div>
-      <div id="visualization" class="col">
-        <div class="col-8 offset-2">
+      <div class="col">
+        <div id="visualization" class="col-8 offset-2 bg-dark" style="border-radius: 15px; padding-bottom: 15px;">
           <div id="dotGrid"></div>
           <div class="container row">
             <div class="col-5">
@@ -242,16 +254,30 @@
         </div>
       </div>
 
-    <div class="container">
+      <div class="container">
         <div class="col">
-            <div id="info-one" class="container col-12" style="rotate: -5deg; margin-top: 400px;">
-                    <div class="bg-white d-flex justify-content-center row shadow-lg" style="height: 400px; width: 400px; border-radius: 100%;">
-                      <h4 class="text-uppercase align-self-end text-center dark">Visste du att...</h4>
-                      <p class="text-center dark" style="width: 80%;">Genomsnitts-svensken är påväg att spendera <i>667 månader</i> under en livstid <i>spenderas på mobilen.</i> <br> Hur </p>
-                    </div>
+          <div id="info-one" class="container col-12" style="rotate: -5deg; margin-top: 400px;">
+            <div class="bg-white d-flex flex-column align-items-center shadow-lg"
+                style="height: 400px; width: 400px; border-radius: 50%; padding: 2rem;">
+              
+              <h4 class="text-uppercase text-center dark mt-auto">
+                Visste du att...
+              </h4>
+
+              <p class="text-center dark" style="width: 80%;">
+                Vårt belöningssystem blir övermättat av information och bekräftelse via våra mobiler.
+                Vi får kickar utav vårt snabba scrollande, vilket inte går att likna med något annat än ett beroende.
+              </p>
+
+              <button class="btn btn-primary mb-auto">
+                Är jag beroende?
+              </button>
+
             </div>
+          </div>
         </div>
-    </div>
+      </div>
+
     </main>
     <footer class="bg-dark-opacity" style="height: 400px;">
       <div class="container row pt-5">
