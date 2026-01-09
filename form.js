@@ -121,7 +121,7 @@ export function initDreamVacationForm() {
         continueFour.addEventListener('click', () => {
         document.getElementById("stepFour").classList.add('d-none');
         document.getElementById("stepFinal").classList.remove('d-none');
-        document.getElementById("whatThisMeans").innerHTML = `Tiden du lägger framför en skärm hade kunnat gått till annat. Visste du att med tiden du lägger framför en skärm under en livstid hade istället kunnat gå <span class="op-bg-red font-paragraph-bold" style="height: 28px; padding-left: 5px; padding-right: 5px; border-radius: 8px;">${Math.round(GLOBAL_totalScreenTime / 11)} varv runt jorden.</span> <br><br> Hade du minskat din skärmtid med ${GLOBAL_dividedTime} ${GLOBAL_phrasingForTime} i veckan hade du haft <br> <span class="op-bg-red font-paragraph-bold" style="height: 28px; padding-left: 5px; padding-right: 5px; border-radius: 8px;"> ${GLOBAL_timeSavedWithNewScreenTime} månader över till annat</span> under din livstid.`
+        document.getElementById("whatThisMeans").innerHTML = `Tiden du lägger framför en skärm hade kunnat gått till annat. Visste du att med tiden du lägger framför en skärm under en livstid hade du istället kunnat gå <span class="op-bg-red font-paragraph-bold" style="height: 28px; padding-left: 5px; padding-right: 5px; border-radius: 8px;">${Math.round(GLOBAL_totalScreenTime / 11)} varv runt jorden.</span> <br><br> Hade du minskat din skärmtid med ${GLOBAL_dividedTime} ${GLOBAL_phrasingForTime} i veckan hade du haft <br> <span class="op-bg-red font-paragraph-bold" style="height: 28px; padding-left: 5px; padding-right: 5px; border-radius: 8px;"> ${GLOBAL_timeSavedWithNewScreenTime} månader över till annat</span> under din livstid.`
 
     });
 
